@@ -3,6 +3,7 @@
 [Itamae](https://github.com/itamae-kitchen/itamae) plugin to install [tmux](https://tmux.github.io/) without any packages
 
 [![Gem Version](https://badge.fury.io/rb/itamae-plugin-recipe-tmux.svg)](https://badge.fury.io/rb/itamae-plugin-recipe-tmux)
+[![Dependency Status](https://gemnasium.com/sue445/itamae-plugin-recipe-tmux.svg)](https://gemnasium.com/sue445/itamae-plugin-recipe-tmux)
 
 ## Installation
 
