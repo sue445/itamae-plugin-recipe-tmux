@@ -2,7 +2,14 @@ username = run_command("whoami").stdout.strip
 
 node.reverse_merge!(
   tmux: {
-    prefix: "/home/#{username}/local"
+    version: "2.1",
+    prefix: "/home/#{username}/local",
+  },
+  libevent: {
+    version: "2.0.22",
+  },
+  ncurses: {
+    version: "6.0",
   }
 )
 
