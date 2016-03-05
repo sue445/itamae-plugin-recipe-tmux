@@ -13,7 +13,7 @@ check_command = "#{node[:tmux][:prefix]}/bin/tmux -V | grep #{node[:tmux][:versi
 end
 
 [
-  "./configure --prefix=#{node[:tmux][:prefix]} LDFLAGS='-L#{node[:tmux][:prefix]}/lib' CFLAGS='-I#{node[:tmux][:prefix]}/include'",
+  "./configure --prefix=#{node[:tmux][:prefix]} LDFLAGS='-L#{node[:tmux][:prefix]}/lib' CFLAGS='-I#{node[:tmux][:prefix]}/include -I#{node[:tmux][:prefix]}/include/ncurses/'",
   "make",
   "make install",
 ].each do |command|
