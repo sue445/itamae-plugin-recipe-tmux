@@ -1,2 +1,3 @@
 tmux:
-  prefix: /usr/local
+  version: "2.1"
+  prefix: "/usr/local"

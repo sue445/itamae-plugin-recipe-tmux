@@ -6,13 +6,38 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure(2) do |config|
+  config.vm.provider :digital_ocean do |provider, override|
+    override.vm.box     = "digital_ocean"
+    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+    provider.token      = ENV["DIGITALOCEAN_ACCESS_TOKEN"]
+    provider.region     = "nyc1"
+    provider.size       = "512MB"
+
+    if ENV["WERCKER"] == "true"
+      provider.ssh_key_name = "wercker-#{ENV['WERCKER_GIT_REPOSITORY']}"
+      override.ssh.private_key_path = "~/.ssh/id_rsa.vagrant"
+    else
+      provider.ssh_key_name = "local"
+      override.ssh.private_key_path = "~/.ssh/id_rsa"
+    end
+  end
+
   config.vm.define :centos70 do |c|
     c.vm.box = "centos/7"
     c.vm.provider :digital_ocean do |provider, override|
       provider.image = "centos-7-0-x64"
     end
-    c.vm.hostname  = 'centos70'
-    c.vm.hostname += "-#{ENV["WERCKER_BUILD_ID"]}" if ENV["WERCKER_BUILD_ID"]
+    c.vm.hostname  = 'itamae-centos70'
+    c.vm.hostname  += "-#{ENV['WERCKER_BUILD_ID']}" if ENV['WERCKER_BUILD_ID']
+  end
+
+  config.vm.define :debian8 do |c|
+    c.vm.box = "debian/jessie64"
+    c.vm.provider :digital_ocean do |provider, override|
+      provider.image = "debian-8-x64"
+    end
+    c.vm.hostname  = 'itamae-debian8'
+    c.vm.hostname  += "-#{ENV['WERCKER_BUILD_ID']}" if ENV['WERCKER_BUILD_ID']
   end
 
   # The most common configuration options are documented and commented below.
