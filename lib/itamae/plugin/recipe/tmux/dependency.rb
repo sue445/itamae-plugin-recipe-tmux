@@ -1,0 +1,2 @@
+package "wget"
+package "gcc"

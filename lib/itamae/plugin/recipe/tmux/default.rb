@@ -15,6 +15,7 @@ node.reverse_merge!(
 
 # via. http://minomawari.jp/2014/04/09/how-to-install-tmux-for-non-root-users/
 # via. http://qiita.com/ikai/items/8cb49aad82351881a583
+include_recipe "./dependency"
 include_recipe "./libevent"
 include_recipe "./ncurses"
 include_recipe "./tmux"
