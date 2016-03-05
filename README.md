@@ -63,7 +63,7 @@ requirements [Vagrant](https://www.vagrantup.com/)
 
 ```sh
 vagrant up centos70
-bundle exec itamae ssh --host=centos70 --vagrant --node-yaml=recipes/node.yml recipes/install.rb
+bundle exec rake itamae:centos70
 bundle exec rake spec:centos70
 ```
 
