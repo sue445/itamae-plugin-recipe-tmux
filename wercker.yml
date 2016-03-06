@@ -3,7 +3,7 @@
 # https://registry.hub.docker.com/_/ruby/
 # If you want to use a specific version you would use a tag:
 # ruby:2.2.2
-box: aigeruth/vagrant@0.0.3
+box: sue445/rvm-vagrant-digitalocean@1.0.0
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
@@ -21,12 +21,12 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
-        - script:
-            name: install bundler
-            code: sudo gem install bundler -v 1.10.6
+        - rvm-use:
+            version: 2.3.0
 
         - bundle-install:
             jobs: 4
+            version: 1.10.6
 
         - script:
             name: echo ruby information
@@ -56,10 +56,6 @@ build:
         - script:
             name: chmod 600 id_rsa
             code: chmod 600 $HOME/.ssh/id_rsa.vagrant
-
-        - script:
-            name: install vagrant plugin
-            code: vagrant plugin install vagrant-digitalocean
 
         - script:
             name: test centos70
