@@ -5,6 +5,8 @@
 [![Gem Version](https://badge.fury.io/rb/itamae-plugin-recipe-tmux.svg)](https://badge.fury.io/rb/itamae-plugin-recipe-tmux)
 [![Dependency Status](https://gemnasium.com/sue445/itamae-plugin-recipe-tmux.svg)](https://gemnasium.com/sue445/itamae-plugin-recipe-tmux)
 
+[![wercker status](https://app.wercker.com/status/f879bd39d3c0a5ac0480cd0286077fa4/m/master "wercker status")](https://app.wercker.com/project/bykey/f879bd39d3c0a5ac0480cd0286077fa4)
+
 ## Installation
 
 Add this line to your application's Gemfile:
