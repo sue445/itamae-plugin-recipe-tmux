@@ -1,5 +1,16 @@
 # Change Log
 
+## [v0.1.2](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/v0.1.2) (2016/03/06)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.1...v0.1.2)
+
+**Merged pull requests:**
+
+- Install make [\#6](https://github.com/sue445/itamae-plugin-recipe-tmux/pull/6) ([sue445](https://github.com/sue445))
+- Setup CI [\#5](https://github.com/sue445/itamae-plugin-recipe-tmux/pull/5) ([sue445](https://github.com/sue445))
+- Setup vagrant [\#4](https://github.com/sue445/itamae-plugin-recipe-tmux/pull/4) ([sue445](https://github.com/sue445))
+- Add include path [\#3](https://github.com/sue445/itamae-plugin-recipe-tmux/pull/3) ([sue445](https://github.com/sue445))
+- Add dependency [\#2](https://github.com/sue445/itamae-plugin-recipe-tmux/pull/2) ([sue445](https://github.com/sue445))
+
 ## [v0.1.1](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/v0.1.1) (2016/02/24)
 [Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.0...v0.1.1)
 
