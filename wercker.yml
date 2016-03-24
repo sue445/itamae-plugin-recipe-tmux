@@ -24,9 +24,12 @@ build:
         - rvm-use:
             version: 2.3.0
 
+        - script:
+            name: install bundler
+            code: gem install bundler -v 1.10.6 --no-document
+
         - bundle-install:
             jobs: 4
-            version: 1.10.6
 
         - script:
             name: echo ruby information
@@ -58,20 +61,10 @@ build:
             code: chmod 600 $HOME/.ssh/id_rsa.vagrant
 
         - script:
-            name: test centos70
-            code: ./ci/build.sh centos70
-
-        - script:
-            name: test debian8
-            code: ./ci/build.sh debian8
+            name: paraduct test
+            code: bundle exec paraduct test
 
     after-steps:
-        - script:
-            name: shutdown all vms
-            code: |
-                vagrant destroy -f centos70
-                vagrant destroy -f debian8
-
         - script:
             name: shutdown old vms
             code: bundle exec ruby ci/destroy_old_droplets.rb

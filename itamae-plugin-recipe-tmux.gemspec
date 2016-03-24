@@ -21,9 +21,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "itamae"
 
-  # NOTE: for vagrant dependency
-  #   https://github.com/mitchellh/vagrant/blob/v1.8.1/vagrant.gemspec#L18
-  spec.add_development_dependency "bundler", ">= 1.5.2", "<= 1.10.6"
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "paraduct"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "serverspec"
 end
