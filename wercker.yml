@@ -24,9 +24,12 @@ build:
         - rvm-use:
             version: 2.3.0
 
+        - script:
+            name: install bundler
+            code: gem install bundler -v 1.10.6 --no-document
+
         - bundle-install:
             jobs: 4
-            version: 1.10.6
 
         - script:
             name: echo ruby information
