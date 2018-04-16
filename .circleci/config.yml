@@ -104,3 +104,12 @@ workflows:
 
   build:
     jobs: *build_jobs
+
+  weekly_build:
+    triggers:
+      - schedule:
+          cron: "00 19 * * 5" # JST 4:00 (Sat)
+          filters:
+            branches:
+              only: master
+    jobs: *build_jobs
