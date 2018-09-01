@@ -9,14 +9,6 @@ default: &default
     - image: circleci/ruby:2.5.0
   working_directory: ~/app
 
-save_repo_cache_option: &save_repo_cache_option
-  key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-  paths:
-    - ~/app
-
-restore_repo_cache_option: &restore_repo_cache_option
-  key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
-
 save_bundle_cache_option: &save_bundle_cache_option
   key: v1-bundle-{{ checksum "itamae-plugin-recipe-tmux.gemspec" }}
   paths:
@@ -31,10 +23,7 @@ build: &build
   <<: *default
 
   steps:
-    - restore_cache:
-        <<: *restore_repo_cache_option
-    - restore_cache:
-        <<: *restore_bundle_cache_option
+    - checkout
 
     # Setup Docker
     - setup_remote_docker
@@ -49,7 +38,11 @@ build: &build
           set +o pipefail
           docker load -i /caches/image.tar | true
 
+    - restore_cache:
+        <<: *restore_bundle_cache_option
     - run: ./.circleci/setup_bundle.sh
+    - save_cache:
+        <<: *save_bundle_cache_option
 
     - run: bundle exec itamae docker --node-yaml=recipes/node.yml recipes/install.rb --image=$CIRCLE_JOB --tag itamae-plugin:latest
 
@@ -61,26 +54,6 @@ build: &build
     - run: DOCKER_IMAGE=itamae-plugin:latest bundle exec rspec
 
 jobs:
-  checkout_code:
-    <<: *default
-
-    steps:
-      - checkout
-      - save_cache:
-          <<: *save_repo_cache_option
-
-  bundle_dependencies:
-    <<: *default
-
-    steps:
-      - restore_cache:
-          <<: *restore_repo_cache_option
-      - restore_cache:
-          <<: *restore_bundle_cache_option
-      - run: ./.circleci/setup_bundle.sh
-      - save_cache:
-          <<: *save_bundle_cache_option
-
   centos:7:
     <<: *build
 
@@ -88,16 +61,8 @@ jobs:
     <<: *build
 
 build_jobs: &build_jobs
-  - checkout_code
-  - bundle_dependencies:
-      requires:
-        - checkout_code
-  - centos:7:
-      requires:
-        - bundle_dependencies
-  - debian:jessie:
-      requires:
-        - bundle_dependencies
+  - centos:7
+  - debian:jessie
 
 workflows:
   version: 2
