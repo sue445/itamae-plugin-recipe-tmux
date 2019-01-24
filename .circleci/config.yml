@@ -1,31 +1,13 @@
 version: 2.1
 
+orbs:
+  ruby-orbs: sue445/ruby-orbs@volatile
+
 executors:
   default:
     docker:
       - image: circleci/ruby:2.5.0
     working_directory: ~/app
-
-commands:
-  setup_bundle:
-    description: "Setup bundle with cache"
-    steps:
-      - restore_cache:
-          keys:
-            - v1-bundle-{{ .Environment.CIRCLE_JOB }}-{{ checksum "itamae-plugin-recipe-tmux.gemspec" }}
-            - v1-bundle-{{ .Environment.CIRCLE_JOB }}
-
-      - run:
-          name: bundle install
-          command: |
-            set -xe
-            bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
-            bundle clean
-      - save_cache:
-          key: v1-bundle-{{ .Environment.CIRCLE_JOB }}-{{ checksum "itamae-plugin-recipe-tmux.gemspec" }}
-          paths:
-            - ~/app/vendor/bundle
-            - ~/app/Gemfile.lock
 
 jobs:
   build:
@@ -52,7 +34,9 @@ jobs:
             set +o pipefail
             docker load -i /caches/image.tar | true
 
-      - setup_bundle
+      - ruby-orbs/bundle-install:
+          with_gemfile_lock: false
+          gemspec_name: "itamae-plugin-recipe-tmux"
 
       - run: bundle exec itamae docker --node-yaml=recipes/node.yml recipes/install.rb --image=<< parameters.image >> --tag itamae-plugin:latest
 
