@@ -37,6 +37,7 @@ jobs:
       - ruby-orbs/bundle-install:
           with_gemfile_lock: false
           gemspec_name: "itamae-plugin-recipe-tmux"
+          update_always: true
 
       - run: bundle exec itamae docker --node-yaml=recipes/node.yml recipes/install.rb --image=<< parameters.image >> --tag itamae-plugin:latest
 
