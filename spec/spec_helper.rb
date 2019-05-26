@@ -11,14 +11,14 @@ set :docker_container, ENV['DOCKER_CONTAINER']
 
 
 # Set environment variables
-# set :env, :LANG => 'C', :LC_MESSAGES => 'C' 
+# set :env, :LANG => 'C', :LC_MESSAGES => 'C'
 
 # Set PATH
 # set :path, '/sbin:/usr/local/sbin:$PATH'
 
 # via. http://qiita.com/sue445/items/b67b0e7209a7fae1a52a
 require "yaml"
-require "itamae/node"
+require "itamae"
 
 def node
   return @node if @node
