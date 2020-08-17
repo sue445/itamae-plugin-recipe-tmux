@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   ruby-orbs: sue445/ruby-orbs@volatile
+  slack:     circleci/slack@volatile
 
 executors:
   default:
@@ -47,6 +48,7 @@ jobs:
             - /caches/image.tar
 
       - run: DOCKER_IMAGE=itamae-plugin:latest bundle exec rspec
+      - slack/notify-on-failure
 
 build_jobs: &build_jobs
   - build:
