@@ -48,11 +48,8 @@ jobs:
             - /caches/image.tar
 
       - run: DOCKER_IMAGE=itamae-plugin:latest bundle exec rspec
+      - slack/notify-on-failure
 
-      - slack/notify:
-          event: fail
-          template: basic_fail_1
-          
 build_jobs: &build_jobs
   - build:
       name:  centos:7
