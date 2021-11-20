@@ -55,8 +55,8 @@ build_jobs: &build_jobs
       name:  centos:7
       image: centos:7
   - build:
-      name:  debian:jessie
-      image: debian:jessie
+      name:  debian:stretch
+      image: debian:stretch
 
 workflows:
   version: 2
