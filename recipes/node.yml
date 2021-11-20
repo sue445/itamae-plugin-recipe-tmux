@@ -1,3 +1,6 @@
 tmux:
   version: "2.1"
   prefix: "/usr/local"
+
+ncurses:
+  version: 6.3
