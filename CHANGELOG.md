@@ -1,7 +1,13 @@
 # Changelog
 
 ## [Unreleased](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/HEAD)
-[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.3...HEAD)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.4...HEAD)
+
+## [v0.1.4](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/v0.1.4) (2021/11/20)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.3...v0.1.4)
+
+* Enable MFA requirement for gem releasing
+  * https://github.com/sue445/itamae-plugin-recipe-tmux/pull/25
 
 ## [v0.1.3](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/v0.1.3) (2020/12/06)
 [Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.2...v0.1.3)
