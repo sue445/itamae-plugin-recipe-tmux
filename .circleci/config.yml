@@ -52,9 +52,6 @@ jobs:
 
 build_jobs: &build_jobs
   - build:
-      name:  centos:7
-      image: centos:7
-  - build:
       name:  debian:buster
       image: debian:buster
 
