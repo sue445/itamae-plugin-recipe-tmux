@@ -7,7 +7,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: cimg/ruby:2.5
+      - image: cimg/ruby:2.6
     working_directory: ~/app
 
 jobs:
