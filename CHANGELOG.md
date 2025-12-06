@@ -1,7 +1,15 @@
 # Changelog
 
 ## [Unreleased](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/HEAD)
-[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.4...HEAD)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.5...HEAD)
+
+## [v0.1.5](https://github.com/sue445/itamae-plugin-recipe-tmux/releases/tag/v0.1.5) (2025/12/06)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.4...v0.1.5)
+
+* Fixed error that occurred when building with Debian bookworm+
+  * https://github.com/sue445/itamae-plugin-recipe-tmux/pull/28
+* Release gem from GitHub Actions
+  * https://github.com/sue445/itamae-plugin-recipe-tmux/pull/29
 
 ## [v0.1.4](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/v0.1.4) (2021/11/20)
 [Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.3...v0.1.4)
