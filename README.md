@@ -47,10 +47,10 @@ tmux:
 libevent:
   # install version (default: 2.1.12)
   version: 2.1.12
-  
+
 ncurses:
   # install version (default: 6.0)
-  version: 6.0    
+  version: 6.0
 ```
 
 ## Development
