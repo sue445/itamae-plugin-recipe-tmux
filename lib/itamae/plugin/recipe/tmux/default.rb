@@ -6,7 +6,7 @@ node.reverse_merge!(
     prefix: "/home/#{username}/local",
   },
   libevent: {
-    version: "2.0.22",
+    version: "2.1.12",
   },
   ncurses: {
     version: "6.0",

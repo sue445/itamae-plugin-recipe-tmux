@@ -1,3 +1,5 @@
 package "wget"
 package "gcc"
 package "make"
+package "libssl-dev"
+package "file"

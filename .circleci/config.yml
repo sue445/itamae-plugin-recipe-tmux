@@ -7,7 +7,7 @@ orbs:
 executors:
   default:
     docker:
-      - image: circleci/ruby:2.5.0
+      - image: cimg/ruby:2.6
     working_directory: ~/app
 
 jobs:
@@ -52,8 +52,14 @@ jobs:
 
 build_jobs: &build_jobs
   - build:
-      name:  debian:buster
-      image: debian:buster
+      name:  debian:bullseye
+      image: debian:bullseye
+  - build:
+      name:  debian:bookworm
+      image: debian:bookworm
+  - build:
+      name:  debian:trixie
+      image: debian:trixie
 
 workflows:
   version: 2
