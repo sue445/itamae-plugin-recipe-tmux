@@ -45,8 +45,8 @@ tmux:
   version: 2.1
 
 libevent:
-  # install version (default: 2.0.22)
-  version: 2.0.22
+  # install version (default: 2.1.12)
+  version: 2.1.12
   
 ncurses:
   # install version (default: 6.0)
