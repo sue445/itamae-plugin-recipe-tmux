@@ -1,7 +1,13 @@
 # Changelog
 
 ## [Unreleased](https://github.com/sue445/itamae-plugin-recipe-tmux/tree/HEAD)
-[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.5...HEAD)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.6...HEAD)
+
+## [v0.1.6](https://github.com/sue445/itamae-plugin-recipe-tmux/releases/tag/v0.1.6) (2026/08/23)
+[Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.5...v0.1.6)
+
+* Migrate release_gem workflow to sue445/workflows (Also testing the gem release)
+  * https://github.com/sue445/itamae-plugin-recipe-tmux/pull/54
 
 ## [v0.1.5](https://github.com/sue445/itamae-plugin-recipe-tmux/releases/tag/v0.1.5) (2025/12/06)
 [Full Changelog](https://github.com/sue445/itamae-plugin-recipe-tmux/compare/v0.1.4...v0.1.5)
